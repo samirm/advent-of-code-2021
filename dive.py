@@ -1,5 +1,4 @@
 
-
 with open('data/directions.txt') as file:
     lines = file.readlines()
     horizontal = 0
