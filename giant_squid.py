@@ -59,21 +59,27 @@ with open('data/bingo.txt') as file:
     # winning_number = 0
     last_winning_number = 0
     winners = 0
+
     for number in numbers_drawn:
         # if bingo is not None: break
         if last_winning_number != 0: break
+
         for this_board in all_boards:
             if bingo is not None or this_board.isWinner == True: continue
+
             for index, value in enumerate(this_board.board):
                 key = list(value)[0]
+
                 if key == number:
                     this_board.board[index] = {key: True}
                     this_board.count += 1
                 bingo = check_for_winner(this_board)
+
                 if bingo is not None:
                     print('winner! ' + str(list(bingo.board[0])[0]))
                     winners += 1
                     bingo.isWinner = True
+
                     if winners == len(all_boards):
                         last_winning_number = number
                         last_bingo = bingo
