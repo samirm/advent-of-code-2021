@@ -65,7 +65,7 @@ with open('data/bingo.txt') as file:
         if last_winning_number != 0: break
 
         for this_board in all_boards:
-            if bingo is not None or this_board.isWinner == True: continue
+            if bingo is not None or this_board.isWinner: continue
 
             for index, value in enumerate(this_board.board):
                 key = list(value)[0]
