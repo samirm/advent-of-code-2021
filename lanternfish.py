@@ -11,11 +11,6 @@ class Fish:
         return 'Fish: ' + str(self.timer)
 
 
-class Fish2:
-    def __init__(self, map):
-        self.map = map
-
-
 def get_frequency(all_fish):
     freq = {}
 
@@ -43,6 +38,7 @@ def simulate(map):
 
     return fish_map
 
+
 with open('data/fish.txt') as file:
     initial_population = file.readline().split(',')
     all_fish = []
@@ -57,8 +53,8 @@ with open('data/fish.txt') as file:
     for day in range(256):
         fish_map = simulate(fish_map)
 
-    for key, value in fish_map.items():
-        print("% d : % d" % (key, value))
+    # for key, value in fish_map.items():
+    #     print("% d : % d" % (key, value))
 
     total = 0
     for pop in fish_map.values():
